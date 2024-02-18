@@ -34,6 +34,7 @@ async function getQuestions(topic, expertise, numQuestions, style) {
   
   try {
     // Parse the response and return questions
+    console.log(JSON.parse(`{"Questions": ${completion.choices[0].message.content}}`));
     return JSON.parse(`{"Questions": ${completion.choices[0].message.content}}`);
   } catch (error) {
     // Handle invalid response from GPT
@@ -57,11 +58,9 @@ async function getEvaluation(question, submission) {
     If the submission is partially correct, grade the submission as '1/3' and set the evaluation to 'partially correct'.
     If the submission is incorrect or partially correct, make sure to provide the correct answer in your explanation.
     Evaluate oversimplified submissions such as 'Yes' or 'idk' as incorrect.
-    Make sure you do not use quotation marks in your evaluation or explanation.
     Make sure to format the response as a JSON object with only three values: 'evalutaion', 'explanation', and 'grade'.
     Make sure the evaluation value is either 'correct', 'incorrect', or 'partially correct'.
-    Make sure the grade is formatted as 'grade/3'.
-    Please do not use any line breaks in your response.`;
+    Make sure the grade is formatted as 'grade/3'.`;
 
   // Call OpenAI's completion API
   const completion = await openai.chat.completions.create({
@@ -71,6 +70,7 @@ async function getEvaluation(question, submission) {
 
   try {
     // Parse the response and return evaluation
+    console.log((completion.choices[0].message.content));
     return JSON.parse(completion.choices[0].message.content);
   } catch (error) {
     // Handle invalid response from GPT
@@ -83,7 +83,7 @@ async function getEvaluation(question, submission) {
   }
 }
 
-// getEvaluation('Ahoy there! What be the symbol for strict equality in JavaScript?', 'The symbol is ===');
+getEvaluation('Ahoy there! What be the symbol for strict equality in JavaScript?', 'The symbol is ===');
 
 // Middleware to parse JSON bodies of requests
 app.use(express.json());
@@ -107,7 +107,9 @@ app.get('/questions', async (req, res) => {
 app.get('/evaluation', async (req, res) => {
   const question = req.query.question;
   const submission = req.query.submission;
+  console.log(question, submission);
   const evaluation = await getEvaluation(question, submission);
+  console.log(evaluation);
   res.json(evaluation);
 });
 
