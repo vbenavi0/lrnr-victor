@@ -72,7 +72,7 @@ To configure LRNR with your OpenAI API key, follow these steps:
 ## Testing Instructions
 To test LRNR locally, follow these steps:
 
-# Frontend Testing
+### Frontend Testing
 
 1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/vbenavi0/lrnr-victor.git):
    ```
@@ -110,7 +110,7 @@ To test LRNR locally, follow these steps:
 
 9. **Select frontend-tests.cy.js spec in Cypress Window**
 
-# Backend Testing
+### Backend Testing
 
 1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/vbenavi0/lrnr-victor.git):
    ```
