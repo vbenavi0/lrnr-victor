@@ -13,9 +13,9 @@ LRNR incorporates the following technologies:
 ## Installation Instructions
 To set up LRNR locally, follow these steps:
 
-1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/florla/lrnr.git):
+1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/vbenavi0/lrnr-victor.git):
    ```
-   git clone https://github.com/florla/lrnr.git
+   git clone https://github.com/vbenavi0/lrnr-victor.git
    ```
 
 2. **Navigate to the Frontend Directory**: Move into the frontend directory:
@@ -68,6 +68,81 @@ To configure LRNR with your OpenAI API key, follow these steps:
    ```
 
 4. **Ensure Security**: Add the `.env` file to your `.gitignore` to prevent exposing your API key publicly.
+
+## Testing Instructions
+To test LRNR locally, follow these steps:
+
+# Frontend Testing
+
+1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/vbenavi0/lrnr-victor.git):
+   ```
+   git clone https://github.com/vbenavi0/lrnr-victor.git
+   ```
+
+2. **Navigate to the Frontend Directory**: Move into the frontend directory:
+   ```
+   cd lrnr/frontend
+   ```
+
+3. **Install Frontend Dependencies**: Install the necessary frontend dependencies using npm:
+   ```
+   npm install
+   ```
+
+4. **Start the Frontend Server**: Launch the frontend development server to run LRNR locally:
+   ```
+   npm start
+   ```
+
+5. **Open Another Terminal Window**
+
+6. **Navigate to the Frontend Directory**: Move into the frontend directory:
+   ```
+   cd lrnr/frontend
+   ```
+
+7. **Start the Frontend Testing**: Run the frontend server cypress command to test LRNR locally:
+   ```
+   npm run cypress:open
+   ```
+
+8. **Select E2E Testing in Cypress Window**
+
+9. **Select frontend-tests.cy.js spec in Cypress Window**
+
+# Backend Testing
+
+1. **Clone the Repository**: Clone the LRNR repository from [GitHub](https://github.com/vbenavi0/lrnr-victor.git):
+   ```
+   git clone https://github.com/vbenavi0/lrnr-victor.git
+   ```
+
+2. **Navigate to the Backend Directory**: Move into the backend directory:
+   ```
+   cd lrnr/backend
+   ```
+
+3. **Install Backend Dependencies**: Install the necessary backend dependencies using npm:
+   ```
+   npm install
+   ```
+
+4. **Start the Backend Server**: Launch the backend server to run LRNR locally:
+   ```
+   npm start
+   ```
+
+5. **Open Another Terminal Window**
+
+6. **Navigate to the Backend Directory**: Move into the backend directory:
+   ```
+   cd lrnr/backend
+   ```
+
+7. **Start the Backend Server Testing**: Launch the backend server jest testing locally:
+   ```
+   npm test
+   ```
 
 ## License
 LRNR is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this software in accordance with the terms specified in the license agreement. If you have any questions or suggestions, please reach out to the LRNR development team. Thank you for using LRNR to enhance your learning journey!
